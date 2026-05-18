@@ -1,0 +1,140 @@
+.hidden-game-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px 20px 20px;
+    animation: fadeIn 0.5s ease-out both;
+    box-sizing: border-box;
+}
+
+.hidden-game-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-canvas {
+    background: linear-gradient(180deg, #020202 0%, #1a0800 100%);
+    border: 2px solid rgba(255, 90, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(255, 90, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.close-game-btn {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.2s;
+}
+
+.close-game-btn:hover {
+    color: var(--primary);
+}
+
+.game-menu {
+    position: absolute;
+    text-align: center;
+    background: rgba(10, 10, 10, 0.95) !important;
+    padding: 2.5rem 1.5rem;
+    border: 2px solid rgba(255, 90, 0, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(255, 90, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-title {
+    font-family: var(--ff-display);
+    color: var(--primary);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.game-inst {
+    font-family: var(--ff-body);
+    color: #bbb;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.game-countdown-overlay {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    color: var(--primary);
+    text-align: center;
+    pointer-events: none;
+}
+
+.countdown-number {
+    font-size: 8rem;
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 1;
+    animation: countdownPulse 0.8s ease-out infinite;
+}
+
+.countdown-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    color: white;
+}
+
+@keyframes countdownPulse {
+    0% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
