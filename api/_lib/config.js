@@ -36,7 +36,8 @@ export function getConfig() {
   const GITHUB_BRANCH = process.env.GITHUB_BRANCH || 'main';
   const ADMIN_GITHUB_USERNAME = (process.env.ADMIN_GITHUB_USERNAME || 'sreehari-nandanan').toLowerCase();
   const SESSION_SECRET = process.env.SESSION_SECRET || 'dev_fallback_secret_must_be_32_chars_long!';
-  const APP_URL = process.env.APP_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:5173');
+  const rawAppUrl = process.env.APP_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:5173');
+  const APP_URL = rawAppUrl.replace(/\/+$/, '');
 
   return {
     GITHUB_CLIENT_ID,

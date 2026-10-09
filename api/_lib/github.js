@@ -115,6 +115,9 @@ export async function putGitHubFile({ filePath, content, sha, message, authorNam
 
     if (!res.ok) {
       const errBody = await res.json().catch(() => ({}));
+      if (res.status === 422 && /sha/i.test(errBody.message || '')) {
+        throw new Error('Conflict: The file has been modified on GitHub since you loaded it. Please reload and review changes before saving.');
+      }
       throw new Error(`GitHub API commit failed (${res.status}): ${errBody.message || res.statusText}`);
     }
 

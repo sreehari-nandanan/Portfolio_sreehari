@@ -24,6 +24,7 @@ console.log('========================================\n');
 const SECRET = 'test_session_secret_32_characters_long_super!';
 process.env.SESSION_SECRET = SECRET;
 process.env.ADMIN_GITHUB_USERNAME = 'sreehari-nandanan';
+process.env.GITHUB_CONTENT_TOKEN = '';
 const ADMIN_USER = 'sreehari-nandanan';
 
 // Helper to create mock response object
