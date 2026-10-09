@@ -28,16 +28,16 @@ function loadEnvFile() {
 loadEnvFile();
 
 export function getConfig() {
-  const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID || '';
-  const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET || '';
-  const GITHUB_CONTENT_TOKEN = process.env.GITHUB_CONTENT_TOKEN || '';
-  const GITHUB_OWNER = process.env.GITHUB_OWNER || 'sreehari-nandanan';
-  const GITHUB_REPO = process.env.GITHUB_REPO || 'Portfolio_sreehari';
-  const GITHUB_BRANCH = process.env.GITHUB_BRANCH || 'main';
-  const ADMIN_GITHUB_USERNAME = (process.env.ADMIN_GITHUB_USERNAME || 'sreehari-nandanan').toLowerCase();
-  const SESSION_SECRET = process.env.SESSION_SECRET || 'dev_fallback_secret_must_be_32_chars_long!';
-  const rawAppUrl = process.env.APP_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:5173');
-  const APP_URL = rawAppUrl.replace(/\/+$/, '');
+  const GITHUB_CLIENT_ID = (process.env.GITHUB_CLIENT_ID || '').trim();
+  const GITHUB_CLIENT_SECRET = (process.env.GITHUB_CLIENT_SECRET || '').trim();
+  const GITHUB_CONTENT_TOKEN = (process.env.GITHUB_CONTENT_TOKEN || '').trim();
+  const GITHUB_OWNER = (process.env.GITHUB_OWNER || 'sreehari-nandanan').trim();
+  const GITHUB_REPO = (process.env.GITHUB_REPO || 'Portfolio_sreehari').trim();
+  const GITHUB_BRANCH = (process.env.GITHUB_BRANCH || 'main').trim();
+  const ADMIN_GITHUB_USERNAME = (process.env.ADMIN_GITHUB_USERNAME || 'sreehari-nandanan').trim().toLowerCase();
+  const SESSION_SECRET = (process.env.SESSION_SECRET || 'dev_fallback_secret_must_be_32_chars_long!').trim();
+  const rawAppUrl = (process.env.APP_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:5173')).trim();
+  const APP_URL = rawAppUrl.replace(/[\r\n\t]/g, '').replace(/\/+$/, '');
 
   return {
     GITHUB_CLIENT_ID,
@@ -52,3 +52,4 @@ export function getConfig() {
     isProduction: process.env.NODE_ENV === 'production' || !!process.env.VERCEL,
   };
 }
+
