@@ -72,5 +72,28 @@
     "order": 3,
     "category": "Cinematic UAV",
     "date": "2024"
+  },
+  {
+    "id": "project-1791547752326",
+    "number": "04",
+    "title": "ioeuehd2i",
+    "span": "bento-wide",
+    "tags": [
+      "Drone Engineering"
+    ],
+    "specs": [
+      "Custom ESC",
+      "Product Design"
+    ],
+    "icon": "Rocket",
+    "desc": "oijed2oihfiuu",
+    "githubUrl": "https://github.com/sreehari-nandanan",
+    "liveUrl": "",
+    "image": "",
+    "featured": true,
+    "published": true,
+    "order": 4,
+    "category": "Drone Build",
+    "date": "2026"
   }
 ]
