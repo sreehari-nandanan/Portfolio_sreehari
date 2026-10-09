@@ -1,0 +1,29 @@
+[
+  {
+    "id": "exp-1",
+    "org": "TinkerHub",
+    "tenure": "Full‑time · 1 yr 8 mos",
+    "title": "Learning Coordinator",
+    "year": "Aug 2025 - Present",
+    "desc": "",
+    "order": 1
+  },
+  {
+    "id": "exp-2",
+    "org": "TinkerHub",
+    "tenure": "Full‑time · 1 yr 8 mos",
+    "title": "Co Lead",
+    "year": "Oct 2024 - Aug 2025",
+    "desc": "",
+    "order": 2
+  },
+  {
+    "id": "exp-3",
+    "org": "IEEE",
+    "tenure": "Apr 2025 - Present · 1 yr 2 mos",
+    "title": "MDC",
+    "year": "Apr 2025 - Present",
+    "desc": "",
+    "order": 3
+  }
+]

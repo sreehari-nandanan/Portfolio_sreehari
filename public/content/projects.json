@@ -1,0 +1,76 @@
+[
+  {
+    "id": "sector",
+    "number": "01",
+    "title": "SECTOR",
+    "span": "bento-wide",
+    "tags": [
+      "Freestyle",
+      "Self Build"
+    ],
+    "icon": "Rocket",
+    "desc": "High-speed FPV racing drone. Fine-tuned for extreme precision and freestyle maneuvers. 0 to 200 km/h in under a second.",
+    "specs": [
+      "Product Design",
+      "0→200 km/h",
+      "Custom ESC"
+    ],
+    "githubUrl": "https://github.com/sreehari-nandanan",
+    "liveUrl": "",
+    "image": "",
+    "featured": true,
+    "published": true,
+    "order": 1,
+    "category": "Drone Build",
+    "date": "2024"
+  },
+  {
+    "id": "cinelog",
+    "number": "02",
+    "title": "CINELOG 35",
+    "span": "bento-narrow",
+    "tags": [
+      "Cinematic FPV"
+    ],
+    "icon": "Video",
+    "desc": "Compact cinewhoop designed for smooth cinematic tracking shots in tight spaces.",
+    "specs": [
+      "Stable",
+      "ND Filters",
+      "Agile"
+    ],
+    "githubUrl": "https://github.com/sreehari-nandanan",
+    "liveUrl": "",
+    "image": "",
+    "featured": true,
+    "published": true,
+    "order": 2,
+    "category": "Cinematic UAV",
+    "date": "2024"
+  },
+  {
+    "id": "goldeneye",
+    "number": "03",
+    "title": "GOLDEN EYE",
+    "span": "bento-wide",
+    "tags": [
+      "Autonomous",
+      "Rescue"
+    ],
+    "icon": "Bot",
+    "desc": "Autonomous rescue drone designed for medicine delivery in disaster zones. Built with custom electronics and flight controllers.",
+    "specs": [
+      "Product Design",
+      "Payload",
+      "Auto Nav"
+    ],
+    "githubUrl": "https://github.com/sreehari-nandanan",
+    "liveUrl": "",
+    "image": "",
+    "featured": true,
+    "published": true,
+    "order": 3,
+    "category": "Autonomous UAV",
+    "date": "2024"
+  }
+]

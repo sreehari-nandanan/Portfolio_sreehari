@@ -1,0 +1,28 @@
+{
+  "skills": [
+    "Drone Engineering",
+    "FPV Piloting",
+    "Product Design",
+    "Embedded Systems",
+    "Arduino & Electronics",
+    "Python",
+    "React",
+    "Betaflight",
+    "ArduPilot"
+  ],
+  "softwareTools": [
+    { "name": "Fusion 360", "icon": "/fusion360.png" },
+    { "name": "Arduino", "icon": "/arduino.png" },
+    { "name": "Betaflight", "icon": "/betaflight.png" },
+    { "name": "QGroundControl", "icon": "/qgroundcontrol.png" },
+    { "name": "VS Code", "icon": "/vscode.png" }
+  ],
+  "marqueeItems": [
+    "Drone Engineer",
+    "FPV Pilot",
+    "Aerospace Innovator",
+    "AI Systems",
+    "NASA Nominee",
+    "Embedded Tech"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Sreehari Nandanan",
+  "firstName": "SREEHARI",
+  "lastName": "NANDANAN",
+  "scriptGreeting": "hello, i am",
+  "title": "Drone Engineer & Aerospace Innovator",
+  "heroDesc": "Building next-gen autonomous flight systems.\nRacing drones, cinematic UAVs & AI-powered rescue vehicles — one breakthrough at a time.",
+  "heroImage": "/sreeharinandanan.webp",
+  "heroLabel": "Sreehari\nNandanan",
+  "heroSecondaryImage": "/sreehari.webp",
+  "heroSecondaryLabel": "Engineering\nMindset",
+  "aboutLead": "Pushing ideas forward, exploring new possibilities, and building what matters. Shaping a path in drones, tech, and innovation — one project at a time.",
+  "aboutBody": "My expertise bridges hardware and software — crafting high-speed racing drones, autonomous rescue solutions, and cinematic aerial rigs. From intricate product design to custom Arduino-based electronics.",
+  "stats": [
+    { "num": "10+", "label": "Drone Builds" },
+    { "num": "20+", "label": "Projects" },
+    { "num": "4+", "label": "Years Exp" },
+    { "num": "∞", "label": "FPV Hours", "isInfinity": true }
+  ],
+  "contactEmail": "sreeharinandanan3690@gmail.com",
+  "contactHeading": "LET'S BUILD SOMETHING",
+  "contactSub": "Custom drone build, skilled FPV pilot, or AI hardware innovation — let's bring your vision to life.",
+  "resumeUrl": "",
+  "socialLinks": [
+    { "label": "GH", "title": "GitHub", "href": "https://github.com/sreehari-nandanan" },
+    { "label": "LI", "title": "LinkedIn", "href": "https://linkedin.com" },
+    { "label": "IG", "title": "Instagram", "href": "https://instagram.com" }
+  ]
+}

@@ -2,6 +2,23 @@ import { useState, useEffect, useRef } from 'react'
 import HiddenGame from './HiddenGame'
 import Loader from './components/Loader'
 import { Rocket, Video, Bot, Satellite, Zap, Globe, Infinity as InfinityIcon, Mail, Plane, Award } from 'lucide-react';
+import { usePortfolioContent } from './hooks/usePortfolioContent';
+
+function renderProjectIcon(iconName: any) {
+  if (typeof iconName !== 'string' && iconName) return iconName;
+  switch (iconName) {
+    case 'Video': return <Video size={48} strokeWidth={1.5} />;
+    case 'Bot': return <Bot size={48} strokeWidth={1.5} />;
+    case 'Plane': return <Plane size={48} strokeWidth={1.5} />;
+    case 'Satellite': return <Satellite size={48} strokeWidth={1.5} />;
+    case 'Zap': return <Zap size={48} strokeWidth={1.5} />;
+    case 'Globe': return <Globe size={48} strokeWidth={1.5} />;
+    case 'Award': return <Award size={48} strokeWidth={1.5} />;
+    case 'Rocket':
+    default:
+      return <Rocket size={48} strokeWidth={1.5} />;
+  }
+}
 
 /* ========================
    PHYSICS ENGINE (Matter.js CDN loaded dynamically)
@@ -324,86 +341,15 @@ function App() {
     setShowGame(true);
   };
 
-  const projects = [
-    {
-      id: 'sector', span: 'bento-wide', number: '01',
-      tags: ['Freestyle', 'Self Build'],
-      title: 'SECTOR', icon: <Rocket size={48} strokeWidth={1.5} />,
-      desc: 'High-speed FPV racing drone. Fine-tuned for extreme precision and freestyle maneuvers. 0 to 200 km/h in under a second.',
-      specs: ['Product Design', '0→200 km/h', 'Custom ESC'],
-    },
-    {
-      id: 'cinelog', span: 'bento-narrow', number: '02',
-      tags: ['Cinematic FPV'],
-      title: 'CINELOG 35', icon: <Video size={48} strokeWidth={1.5} />,
-      desc: 'Compact cinewhoop designed for smooth cinematic tracking shots in tight spaces.',
-      specs: ['Stable', 'ND Filters', 'Agile'],
-    },
-    {
-      id: 'goldeneye', span: 'bento-wide', number: '03',
-      tags: ['Autonomous', 'Rescue'],
-      title: 'GOLDEN EYE', icon: <Bot size={48} strokeWidth={1.5} />,
-      desc: 'Autonomous rescue drone designed for medicine delivery in disaster zones. Built with custom electronics and flight controllers.',
-      specs: ['Product Design', 'Payload', 'Auto Nav'],
-    },
-  ];
-
-  const experiences = [
-    { year: 'Aug 2025 - Present', title: 'Learning Coordinator', org: 'TinkerHub', desc: '', tag: null },
-    { year: 'Oct 2024 - Aug 2025', title: 'Co Lead', org: 'TinkerHub', desc: '', tag: null },
-    { year: 'Apr 2025 - Present', title: 'MDC', org: 'IEEE', desc: '', tag: null },
-  ];
-
-  const achievements = [
-    {
-      title: 'NASA Space Apps Global Nominee',
-      desc: 'Selected for the global nomination in the NASA Space Apps Challenge 2024 with Team Clean-Enviro.',
-      img: '/achievements/nasa.jpg',
-      tags: ['NASA', 'AI', 'Aerospace']
-    },
-    {
-      title: 'TinkerHub Co-Lead',
-      desc: 'Co-lead of TinkerHub TOC-H campus team, promoting tech learning & innovation.',
-      img: '/achievements/tinkerhub.jpg',
-      tags: ['Community', 'Leadership']
-    },
-    {
-      title: 'Exhibition at Central University',
-      desc: 'Showcased innovative drone technologies and autonomous UAV projects at Kasaragod Central University.',
-      img: '/achievements/kazz.png',
-      tags: ['Exhibition', 'UAV']
-    },
-    {
-      title: 'Electronics Workshops',
-      desc: 'Completed advanced certification in modern web technologies and responsive design principles.',
-      img: '/achievements/certificate.png',
-      tags: ['Certification', 'Web']
-    },
-    {
-      title: 'Tech Innovation Workshops',
-      desc: 'Attended multiple hands-on workshops on advanced electronics and embedded systems.',
-      img: '/achievements/aisat.jpg',
-      tags: ['Workshop', 'Electronics']
-    },
-    {
-      title: 'Innovation Excellence Award',
-      desc: 'Recognized for outstanding contributions to emerging drone technology applications.',
-      img: '/achievements/award.png',
-      tags: ['Award', 'Excellence']
-    }
-  ];
-
-  const skills = ['Drone Engineering', 'FPV Piloting', 'Product Design', 'Embedded Systems', 'Arduino & Electronics', 'Python', 'React', 'Betaflight', 'ArduPilot'];
-
-  const softwareTools = [
-    { name: 'Fusion 360', icon: '/fusion360.png' },
-    { name: 'Arduino', icon: '/arduino.png' },
-    { name: 'Betaflight', icon: '/betaflight.png' },
-    { name: 'QGroundControl', icon: '/qgroundcontrol.png' },
-    { name: 'VS Code', icon: '/vscode.png' },
-  ];
-
-  const marqueeItems = ['Drone Engineer', '•', 'FPV Pilot', '•', 'Aerospace Innovator', '•', 'AI Systems', '•', 'NASA Nominee', '•', 'Embedded Tech', '•'];
+  const {
+    projects,
+    profile,
+    skills,
+    softwareTools,
+    marqueeItems,
+    experiences,
+    achievements,
+  } = usePortfolioContent();
 
   return (
     <div>
@@ -441,28 +387,26 @@ function App() {
 
           {/* Polaroid Group */}
           <div className="hero-polaroid">
-            <img src="/sreeharinandanan.webp" alt="Sreehari Nandanan" />
-            <div className="hero-polaroid-label">Sreehari<br />Nandanan</div>
+            <img src={profile.heroImage || "/sreeharinandanan.webp"} alt={profile.name || "Sreehari Nandanan"} />
+            <div className="hero-polaroid-label" style={{ whiteSpace: 'pre-line' }}>{profile.heroLabel || "Sreehari\nNandanan"}</div>
           </div>
 
           <div className="hero-polaroid secondary">
-            <img src="/sreehari.webp" alt="Sreehari Profile" />
-            <div className="hero-polaroid-label">Engineering<br />Mindset</div>
+            <img src={profile.heroSecondaryImage || "/sreehari.webp"} alt="Sreehari Profile" />
+            <div className="hero-polaroid-label" style={{ whiteSpace: 'pre-line' }}>{profile.heroSecondaryLabel || "Engineering\nMindset"}</div>
           </div>
 
           {/* HERO MAIN CONTENT */}
           <div className="hero-content">
             {/* Name block */}
             <div className="hero-name-block">
-              <span className="hero-script">hello, i am</span>
-              <h1 className="hero-name">SREEHARI</h1>
-              <div className="hero-name-outline">NANDANAN</div>
+              <span className="hero-script">{profile.scriptGreeting || "hello, i am"}</span>
+              <h1 className="hero-name">{profile.firstName || "SREEHARI"}</h1>
+              <div className="hero-name-outline">{profile.lastName || "NANDANAN"}</div>
             </div>
 
-            <p className="hero-desc" style={{ marginTop: '0.2rem' }}>
-              <strong>Building next-gen autonomous flight systems.</strong><br />
-              Racing drones, cinematic UAVs &amp; AI-powered rescue vehicles —
-              one breakthrough at a time.
+            <p className="hero-desc" style={{ marginTop: '0.2rem', whiteSpace: 'pre-line' }}>
+              {profile.heroDesc}
             </p>
           </div>
 
@@ -522,22 +466,18 @@ function App() {
             </p>
 
             <div className="stats-row">
-              <div className="stat-item">
-                <span className="stat-num">10+</span>
-                <span className="stat-lbl">Drone Builds</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-num">20+</span>
-                <span className="stat-lbl">Projects</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-num">4+</span>
-                <span className="stat-lbl">Years Exp</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-num" style={{ display: 'flex', alignItems: 'center' }}><InfinityIcon size={46} strokeWidth={3} style={{ marginTop: '2px' }} /></span>
-                <span className="stat-lbl">FPV Hours</span>
-              </div>
+              {(profile.stats || []).map((s, idx) => (
+                <div key={idx} className="stat-item">
+                  <span className="stat-num" style={s.isInfinity || s.num === '∞' ? { display: 'flex', alignItems: 'center' } : {}}>
+                    {s.isInfinity || s.num === '∞' ? (
+                      <InfinityIcon size={46} strokeWidth={3} style={{ marginTop: '2px' }} />
+                    ) : (
+                      s.num
+                    )}
+                  </span>
+                  <span className="stat-lbl">{s.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -560,16 +500,16 @@ function App() {
 
           <div className="bento-grid">
             {projects.map((p, i) => (
-              <div key={p.id} className={`bento-card ${p.span} reveal`} style={{ '--delay': `${i * 80}ms` }}>
-                <div className="card-num">{p.number}</div>
+              <div key={p.id} className={`bento-card ${p.span || 'bento-wide'} reveal`} style={{ '--delay': `${i * 80}ms` }}>
+                <div className="card-num">{p.number || (i + 1).toString().padStart(2, '0')}</div>
                 <div className="card-tags">
-                  {p.tags.map(t => <span key={t} className="card-tag">{t}</span>)}
+                  {(p.tags || []).map(t => <span key={t} className="card-tag">{t}</span>)}
                 </div>
-                <div className="card-icon">{p.icon}</div>
+                <div className="card-icon">{renderProjectIcon(p.icon)}</div>
                 <h3 className="card-title">{p.title}</h3>
                 <p className="card-desc">{p.desc}</p>
                 <div className="card-specs">
-                  {p.specs.map(s => <span key={s} className="card-spec">{s}</span>)}
+                  {(p.specs || []).map(s => <span key={s} className="card-spec">{s}</span>)}
                 </div>
               </div>
             ))}
@@ -591,53 +531,34 @@ function App() {
 
             <div className="exp-list-container">
               <div className="exp-list">
-                {/* TinkerHub grouped block */}
-                <div className="exp-item exp-group-block">
-                  <div className="exp-body">
-                    <div className="exp-group-header">
-                      <div className="exp-group-company">TinkerHub</div>
-                      <div className="exp-group-tenure">Full‑time · 1 yr 8 mos</div>
-                    </div>
-                    <div className="exp-group-roles">
-                      {experiences.filter(e => e.org === 'TinkerHub').map((e, i, arr) => (
-                        <div key={i} className="exp-role-row">
-                          <div className="exp-role-connector">
-                            <div className="exp-role-dot" />
-                            {i < arr.length - 1 && <div className="exp-role-line" />}
-                          </div>
-                          <div className="exp-role-body" style={{ paddingBottom: i === arr.length - 1 ? '0' : '1.8rem' }}>
-                            <div className="exp-title">{e.title}</div>
-                            <div className="exp-year exp-role-year">{e.year}</div>
-                          </div>
+                {Array.from(new Set(experiences.map((e) => e.org))).map((org) => {
+                  const orgRoles = experiences.filter((e) => e.org === org);
+                  const orgTenure = orgRoles[0]?.tenure;
+                  return (
+                    <div key={org} className="exp-item exp-group-block">
+                      <div className="exp-body">
+                        <div className="exp-group-header">
+                          <div className="exp-group-company">{org}</div>
+                          {orgTenure && <div className="exp-group-tenure">{orgTenure}</div>}
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* IEEE grouped block (same layout) */}
-                <div className="exp-item exp-group-block">
-                  <div className="exp-body">
-                    <div className="exp-group-header">
-                      <div className="exp-group-company">IEEE</div>
-                      <div className="exp-group-tenure">Apr 2025 - Present · 1 yr 2 mos</div>
-                    </div>
-                    <div className="exp-group-roles">
-                      {experiences.filter(e => e.org === 'IEEE').map((e, i, arr) => (
-                        <div key={i} className="exp-role-row">
-                          <div className="exp-role-connector">
-                            <div className="exp-role-dot" />
-                            {i < arr.length - 1 && <div className="exp-role-line" />}
-                          </div>
-                          <div className="exp-role-body" style={{ paddingBottom: i === arr.length - 1 ? '0' : '1.8rem' }}>
-                            <div className="exp-title">{e.title}</div>
-                            <div className="exp-year exp-role-year">{e.year}</div>
-                          </div>
+                        <div className="exp-group-roles">
+                          {orgRoles.map((e, i, arr) => (
+                            <div key={i} className="exp-role-row">
+                              <div className="exp-role-connector">
+                                <div className="exp-role-dot" />
+                                {i < arr.length - 1 && <div className="exp-role-line" />}
+                              </div>
+                              <div className="exp-role-body" style={{ paddingBottom: i === arr.length - 1 ? '0' : '1.8rem' }}>
+                                <div className="exp-title">{e.title}</div>
+                                <div className="exp-year exp-role-year">{e.year}</div>
+                              </div>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -672,7 +593,6 @@ function App() {
           </div>
         </section>
 
-
         {/* ===== CONTACT ===== */}
         <section id="contact" className="contact-section">
           <div className="contact-ghost">LET'S FLY</div>
@@ -683,12 +603,13 @@ function App() {
               <div className="outlined-text">SOMETHING</div>
             </div>
             <p className="contact-sub">
-              Custom drone build, skilled FPV pilot, or AI hardware innovation — let's bring your vision to life.
+              {profile.contactSub || "Custom drone build, skilled FPV pilot, or AI hardware innovation — let's bring your vision to life."}
             </p>
-            <a href="mailto:sreeharinandanan3690@gmail.com" className="contact-email">
+            <a href={`mailto:${profile.contactEmail || "sreeharinandanan3690@gmail.com"}`} className="contact-email">
               <Mail size={20} />
-              sreeharinandanan3690@gmail.com
+              {profile.contactEmail || "sreeharinandanan3690@gmail.com"}
             </a>
+
             <div className="social-links">
               {[
                 { label: 'GH', title: 'GitHub', href: '#', svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" /></svg> },

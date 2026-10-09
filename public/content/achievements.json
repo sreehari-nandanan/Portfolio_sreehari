@@ -1,0 +1,69 @@
+[
+  {
+    "id": "ach-1",
+    "title": "NASA Space Apps Global Nominee",
+    "desc": "Selected for the global nomination in the NASA Space Apps Challenge 2024 with Team Clean-Enviro.",
+    "img": "/achievements/nasa.jpg",
+    "tags": [
+      "NASA",
+      "AI",
+      "Aerospace"
+    ],
+    "order": 1
+  },
+  {
+    "id": "ach-2",
+    "title": "TinkerHub Co-Lead",
+    "desc": "Co-lead of TinkerHub TOC-H campus team, promoting tech learning & innovation.",
+    "img": "/achievements/tinkerhub.jpg",
+    "tags": [
+      "Community",
+      "Leadership"
+    ],
+    "order": 2
+  },
+  {
+    "id": "ach-3",
+    "title": "Exhibition at Central University",
+    "desc": "Showcased innovative drone technologies and autonomous UAV projects at Kasaragod Central University.",
+    "img": "/achievements/kazz.png",
+    "tags": [
+      "Exhibition",
+      "UAV"
+    ],
+    "order": 3
+  },
+  {
+    "id": "ach-4",
+    "title": "Electronics Workshops",
+    "desc": "Completed advanced certification in modern web technologies and responsive design principles.",
+    "img": "/achievements/certificate.png",
+    "tags": [
+      "Certification",
+      "Web"
+    ],
+    "order": 4
+  },
+  {
+    "id": "ach-5",
+    "title": "Tech Innovation Workshops",
+    "desc": "Attended multiple hands-on workshops on advanced electronics and embedded systems.",
+    "img": "/achievements/aisat.jpg",
+    "tags": [
+      "Workshop",
+      "Electronics"
+    ],
+    "order": 5
+  },
+  {
+    "id": "ach-6",
+    "title": "Innovation Excellence Award",
+    "desc": "Recognized for outstanding contributions to emerging drone technology applications.",
+    "img": "/achievements/award.png",
+    "tags": [
+      "Award",
+      "Excellence"
+    ],
+    "order": 6
+  }
+]

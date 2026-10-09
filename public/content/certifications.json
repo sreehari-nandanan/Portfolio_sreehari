@@ -1,0 +1,18 @@
+[
+  {
+    "id": "cert-1",
+    "name": "Advanced Modern Web & Embedded Interface Certification",
+    "issuer": "Technical Workshops",
+    "date": "2024",
+    "credentialUrl": "",
+    "order": 1
+  },
+  {
+    "id": "cert-2",
+    "name": "UAV & Autonomous Flight Navigation Systems",
+    "issuer": "Aerospace Research Program",
+    "date": "2024",
+    "credentialUrl": "",
+    "order": 2
+  }
+]
