@@ -1,31 +1,7 @@
 [
   {
-    "id": "cinelog",
-    "number": "01",
-    "title": "CINELOG 35",
-    "span": "bento-narrow",
-    "tags": [
-      "Cinematic FPV"
-    ],
-    "icon": "Video",
-    "desc": "Compact cinewhoop designed for smooth cinematic tracking shots in tight spaces.",
-    "specs": [
-      "Stable",
-      "ND Filters",
-      "Agile"
-    ],
-    "githubUrl": "https://github.com/sreehari-nandanan",
-    "liveUrl": "",
-    "image": "",
-    "featured": true,
-    "published": true,
-    "order": 1,
-    "category": "Cinematic UAV",
-    "date": "2024"
-  },
-  {
     "id": "sector",
-    "number": "02",
+    "number": "01",
     "title": "SECTOR",
     "span": "bento-wide",
     "tags": [
@@ -44,13 +20,13 @@
     "image": "",
     "featured": true,
     "published": true,
-    "order": 2,
+    "order": 1,
     "category": "Drone Build",
     "date": "2024"
   },
   {
     "id": "goldeneye",
-    "number": "03",
+    "number": "02",
     "title": "GOLDEN EYE",
     "span": "bento-wide",
     "tags": [
@@ -69,8 +45,32 @@
     "image": "",
     "featured": true,
     "published": true,
-    "order": 3,
+    "order": 2,
     "category": "Autonomous UAV",
+    "date": "2024"
+  },
+  {
+    "id": "cinelog",
+    "number": "03",
+    "title": "CINELOG 35",
+    "span": "bento-narrow",
+    "tags": [
+      "Cinematic FPV"
+    ],
+    "icon": "Video",
+    "desc": "Compact cinewhoop designed for smooth cinematic tracking shots in tight spaces.",
+    "specs": [
+      "Stable",
+      "ND Filters",
+      "Agile"
+    ],
+    "githubUrl": "https://github.com/sreehari-nandanan",
+    "liveUrl": "",
+    "image": "",
+    "featured": true,
+    "published": true,
+    "order": 3,
+    "category": "Cinematic UAV",
     "date": "2024"
   }
 ]
